@@ -13,11 +13,14 @@ import plotly.graph_objects as go
 from streamlit_lottie import st_lottie
 import json
 import isodate  # For parsing YouTube duration
+import os
+from dotenv import load_dotenv
 
 warnings.filterwarnings('ignore')
 
-# YouTube API configuration
-YOUTUBE_API_KEY = "AIzaSyDE46XU7u1UmaCEFCkRjz7gmsKmnj8lciw"
+# YouTube API configuration (loaded from environment)
+load_dotenv()
+YOUTUBE_API_KEY = os.getenv("YOUTUBE_API_KEY")
 YOUTUBE_API_URL = "https://www.googleapis.com/youtube/v3"
 
 # Configure the page
